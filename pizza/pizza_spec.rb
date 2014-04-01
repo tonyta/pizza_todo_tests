@@ -6,19 +6,23 @@ describe 'pizza' do
 
   context "upon creation" do
     it "should have a name" do
-      expect(pizza.attributes).to include(:name)
+      pizza.should respond_to(:name)
     end
     it "should have a description" do
-      expect(pizza.attributes).to include(:description)
+      pizza.should respond_to(:description)
     end
     it "should have a time_baked" do
-      expect(pizza.attributes).to include(:time_baked)
+      pizza.should respond_to(:time_baked)
     end
   end
 
   context '#initialize' do
     it 'should expect a string for a name' do
       expect(pizza.name).to be_a String
+    end
+
+    it 'should default time_baked to 0' do
+
     end
   end
 end
