@@ -23,7 +23,7 @@ describe Todo  do
   end
 
   it "should expect a DateTime for the timestamp" do
-    todo.created_at.class.should_be == DateTime
+    todo.created_at.class.should be == DateTime
   end
 
 
@@ -31,7 +31,7 @@ describe Todo  do
     todo.status.should be =="incomplete"
   end
 
-  it "should be initialized with a created_at timetamp"
+  it "should be initialized with a created_at timetamp" do
     todo.created_at.should_not be_nil
   end
 

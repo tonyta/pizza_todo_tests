@@ -1,3 +1,5 @@
+require 'date'
+
 class Todo
   attr_accessor :title, :description, :status, :created_at
 
@@ -5,7 +7,8 @@ class Todo
     @title = 'title'
     @description = 'description'
     @status = 'Not complete'
-    @created_at = Time.now
+    @created_at = DateTime.now
+    @status = 'incomplete'
   end
 
 end

@@ -22,7 +22,24 @@ describe 'pizza' do
     end
 
     it 'should default time_baked to 0' do
-
+      pizza.time_baked.should == 0
     end
   end
+
+  context 'toppings' do
+    before do
+      pizza1 = Pizza.new
+      topping1 = Topping.new
+      topping2 = Topping.new
+      pizza1 << topping1 << topping2
+    end
+
+    it 'should have more than 1 topping' do
+      pizza1.toppings.count > 1
+    end
+  end
+end
+
+describe 'topping' do
+  let(:topping) { Topping.new }
 end
