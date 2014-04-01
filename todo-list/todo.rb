@@ -6,9 +6,8 @@ class Todo
   def initialize
     @title = 'title'
     @description = 'description'
-    @status = 'Not complete'
-    @created_at = DateTime.now
     @status = 'incomplete'
+    @created_at = DateTime.now
   end
 
   def mark_as_complete!

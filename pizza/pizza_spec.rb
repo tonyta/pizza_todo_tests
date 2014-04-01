@@ -29,8 +29,8 @@ describe 'pizza' do
   context 'toppings' do
     before do
       @pizza1 = Pizza.new
-      topping1 = Topping.new(required_bake_time: 30)
-      topping2 = Topping.new(required_bake_time: 30)
+      topping1 = Topping.new
+      topping2 = Topping.new
       @pizza1 << topping1 << topping2
     end
 
@@ -40,12 +40,19 @@ describe 'pizza' do
   end
 
   context '#required_bake_time' do
+    before do
+      @pizza1 = Pizza.new
+      topping1 = Topping.new(required_bake_time: 100)
+      topping2 = Topping.new(required_bake_time: 200)
+      @pizza1 << topping1 << topping2
+    end
+
     it 'should have a method "required_bake_time"' do
       @pizza1.respond_to required_bake_time
     end
 
-    it 'should return 900 + all max_bake_times' do
-      @pizza1.required_bake_time.should eq 960
+    it 'should return 900 + the largest required_bake_time of all the pizza\'s toppings' do
+      @pizza1.required_bake_time.should eq 1100
     end
   end
 end
@@ -58,6 +65,4 @@ describe 'topping' do
       topping.required_bake_time.should eq 30
     end
   end
-
-
 end
