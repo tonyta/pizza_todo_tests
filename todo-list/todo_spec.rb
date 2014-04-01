@@ -44,4 +44,23 @@ describe Todo  do
     todo.mark_as_complete!
     todo.status.should == "complete"
   end
+
+  it "has a 'mark_as_incomplete!' method" do
+    todo.should respond_to(:mark_as_incomplete!)
+  end
+
+  it "sets its status to 'incomplete' when mark_as_incomplete! is called" do
+    todo.mark_as_incomplete!
+    todo.status.should == "incomplete"
+  end
+
+  it "has a 'complete?' method" do
+    todo.should respond_to(:complete?)
+  end
+
+  it "returns a boolean when 'complete?' is called" do
+    todo.complete?.class.should == FalseClass
+  end
+
+  #it "returns "
 end
