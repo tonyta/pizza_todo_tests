@@ -22,6 +22,10 @@ describe Todo  do
     todo.should respond_to(:created_at)
   end
 
+  it "should expect a DateTime for the timestamp" do
+    todo.created_at.class.should_be == DateTime
+  end
+
 
   it "should have a default status of 'incomplete'" do
     todo.status.should be =="incomplete"
