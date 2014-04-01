@@ -58,9 +58,38 @@ describe Todo  do
     todo.should respond_to(:complete?)
   end
 
-  it "returns a boolean when 'complete?' is called" do
-    todo.complete?.class.should == FalseClass
+  # it "returns a boolean when 'complete?' is called" do
+  #   todo.complete?.class.should == FalseClass
+  # end
+
+  it "returns true for 'complete?' when it is complete" do
+    todo.mark_as_complete!
+    todo.should be_complete
   end
 
-  #it "returns "
+  it "returns false for 'complete?' when it is incomplete" do
+    todo.mark_as_complete!
+    todo.should_not be_complete
+  end
+
+end
+
+describe List do
+
+  let(:list) {List.new()}
+
+  it "has a title" do
+    list.should respond_to(:title)
+  end
+
+  it "has tasks property" do
+    list.should respond_to(:tasks)
+  end
+
+  it "add_task adds a task to the list" do
+    @todo = Todo.new
+    list.add_task(@todo)
+    list.tasks.should include
+  end
+
 end
