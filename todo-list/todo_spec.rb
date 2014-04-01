@@ -22,4 +22,13 @@ describe Todo  do
     todo.should respond_to(:created_at)
   end
 
+
+  it "should have a default status of 'incomplete'" do
+    todo.status.should be =="incomplete"
+  end
+
+  it "should be initialized with a created_at timetamp"
+    todo.created_at.should_not be_nil
+  end
+
 end
