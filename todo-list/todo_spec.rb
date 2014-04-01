@@ -4,7 +4,7 @@ require_relative 'todo'
 
 describe Todo  do
 
-  let(:todo) {Todo.new()}
+  let(:todo) {Todo.new({title:"write tests",description: "Write some fucking tests", status:"complete",created_at:Time.now})}
 
   it "has a title" do
     todo.should respond_to(:title)
