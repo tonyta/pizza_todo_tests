@@ -13,7 +13,14 @@ class Pizza
     @toppings << topping
   end
 
+  def required_bake_time
+
+  end
 end
 
 class Topping
+  attr_accessor :required_bake_time
+  def initialize(args)
+    @required_bake_time = args.fetch(:required_bake_time)
+  end
 end
