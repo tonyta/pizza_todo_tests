@@ -28,14 +28,14 @@ describe 'pizza' do
 
   context 'toppings' do
     before do
-      pizza1 = Pizza.new
+      @pizza1 = Pizza.new
       topping1 = Topping.new(required_bake_time: 30)
       topping2 = Topping.new(required_bake_time: 30)
-      pizza1 << topping1 << topping2
+      @pizza1 << topping1 << topping2
     end
 
     it 'should have more than 1 topping' do
-      pizza1.toppings.count > 1
+      @pizza1.toppings.count > 1
     end
   end
 
