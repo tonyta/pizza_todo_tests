@@ -11,4 +11,7 @@ class Todo
     @status = 'incomplete'
   end
 
+  def mark_as_complete!
+    @status = 'complete'
+  end
 end
