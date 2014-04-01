@@ -4,7 +4,7 @@ require_relative 'pizza'
 describe 'pizza' do
   let(:pizza) {Pizza.new()}
 
-  context "#initialize" do
+  context "upon creation" do
     it "should have a name" do
       expect(pizza.attributes).to include(:name)
     end
@@ -13,6 +13,12 @@ describe 'pizza' do
     end
     it "should have a time_baked" do
       expect(pizza.attributes).to include(:time_baked)
+    end
+  end
+
+  context '#initialize' do
+    it 'should expect a string for a name' do
+      expect(pizza.name).to be_a String
     end
   end
 end
