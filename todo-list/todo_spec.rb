@@ -1,13 +1,13 @@
 require 'rspec'
-require 'spec_helper'
-require 'todo'
+# require 'spec_helper'
+require_relative 'todo'
 
 describe Todo  do
 
   let(:todo) {Todo.new()}
 
   it "has a title" do
-    expect(todo.attributes).to include(:title)
+    todo.should respond_to(:title)
   end
 
   it "has a description" do
